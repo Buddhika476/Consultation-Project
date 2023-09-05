@@ -1,0 +1,52 @@
+@charset "ISO-8859-1";
+.topic-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.consultant-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed */
+}
+
+.consultant-card {
+    width: calc(25% - 20px); /* 25% width with spacing */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.consultant-card img {
+    max-width: 100%;
+}
+
+.consultant-name {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.availability-status {
+    color: green;
+}
+
+.calendar-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    background-color: #0056b3;
+}
