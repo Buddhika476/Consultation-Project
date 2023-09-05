@@ -28,6 +28,18 @@
   	<description></description>
   	<servlet-class>com.buddhika.consultant.service.controller.ConsultantController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AdminControllerAppointments</servlet-name>
+  	<display-name>AdminControllerAppointments</display-name>
+  	<description></description>
+  	<servlet-class>com.buddhika.consultant.service.controller.AdminControllerAppointments</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AdminControllerUsers</servlet-name>
+  	<display-name>AdminControllerUsers</display-name>
+  	<description></description>
+  	<servlet-class>com.buddhika.consultant.service.controller.AdminControllerUsers</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationController</servlet-name>
   	<url-pattern>/userdao</url-pattern>
@@ -44,9 +56,17 @@
   	<servlet-name>AppointmentController</servlet-name>
   	<url-pattern>/getappointment</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>ConsultantController</servlet-name>
   	<url-pattern>/getconsult</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminControllerAppointments</servlet-name>
+  	<url-pattern>/getadconappointments</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminControllerUsers</servlet-name>
+  	<url-pattern>/getadusers</url-pattern>
   </servlet-mapping>
   
 </web-app>

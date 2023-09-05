@@ -5,6 +5,7 @@ import com.buddhika.consultant.service.dao.UserDAOImpl;
 import com.buddhika.consultant.service.model.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class UserService {
 	
@@ -33,5 +34,21 @@ public class UserService {
 	
 	public boolean loginUser(User user) throws ClassNotFoundException, SQLException {
 		return getUserDAO().loginUser(user);
+	}
+	
+	public boolean editUser(User user) throws ClassNotFoundException, SQLException {
+		return getUserDAO().editUser(user);
+	}
+
+	public boolean deleteUser(int userID) throws ClassNotFoundException, SQLException {
+		return getUserDAO().deleteUser(userID);
+	}
+
+	public User fetchSingleUser(int userID) throws ClassNotFoundException, SQLException {
+		return getUserDAO().fetchSingleUser(userID);
+	}
+	
+	public List<User> fetchAllUser() throws ClassNotFoundException, SQLException {
+		return getUserDAO().fetchAllUser();
 	}
 }
