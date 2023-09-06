@@ -74,6 +74,11 @@
 					  <li class="nav-item">
 					    <a class="nav-link" href="getappointment?actiontype=all">My Appointments</a>
 					  </li>
+					  <li class="nav-item">
+					  	<a class="nav-link" href="user-appointment.jsp">
+					     <i class="fas fa-sync-alt"></i> Reset
+					   </a>
+					  </li>
 					</ul>
 					<br>
 					<div align="center">

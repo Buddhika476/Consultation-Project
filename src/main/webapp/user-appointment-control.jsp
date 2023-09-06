@@ -25,7 +25,7 @@
 				          <a class="nav-link" aria-current="page" href="user-home.jsp">Home</a>
 				        </li>
 				        <li class="nav-item">
-				          <a class="nav-link" href="user-consultants.jsp">Consultants</a>
+				          <a class="nav-link" href="consultants.jsp">Consultants</a>
 				        </li>
 				        <li class="nav-item">
 				          <a class="nav-link active" href="#">Appointments</a>
@@ -75,18 +75,19 @@
 					  <li class="nav-item">
 					    <a class="nav-link active" href="#">My Appointments</a>
 					  </li>
+					  <li class="nav-item">
+					  	<a class="nav-link" href="getappointment?actiontype=all.jsp">
+					     <i class="fas fa-sync-alt"></i> Reset
+					   </a>
+					  </li>
 					</ul>
 					<br>
-					<div align="center">
-						<h2>My Appointment</h2>
-						<div class="modal-footer">
-					           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Refresh</button>
-					    </div><br><br>
-					</div>
-				</div>
-				<br>
-				<div>
-					<table class="table table-striped">
+					<div class="container">
+					    <div class="text-center">
+							<h2>My Appointment</h2>
+						</div>
+					<div class="mt-4">
+					        <table class="table table-striped">
 						<thead>
 							<tr>
 								<th>Appointment Number</th>
@@ -124,6 +125,8 @@
 						</tbody>
 					</table>
 				</div>
+			</div>
+			</div>
 				<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -150,9 +153,5 @@
 	                feedbackModal.show();
 	            }
 	        });
-	        
-	        function refreshPage() {
-	            window.location.href = "appointment?actiontype=all";
-	          }
 		</script>
 </html>

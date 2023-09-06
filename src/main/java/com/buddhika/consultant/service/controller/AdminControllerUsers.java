@@ -75,7 +75,7 @@ public class AdminControllerUsers extends HttpServlet {
 		}
 		
 		request.setAttribute("feedbackMessage", message); 
-		RequestDispatcher rd = request.getRequestDispatcher("admin-panel-user-add.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("admin-panel.jsp");
 		rd.forward(request, response);
 		
 	}
@@ -104,7 +104,7 @@ public class AdminControllerUsers extends HttpServlet {
 				}
 			
 			request.setAttribute("feedbackMessage", message);
-			RequestDispatcher rd = request.getRequestDispatcher("admin-panel.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("admin-panel-user-check.jsp");
 			rd.forward(request, response);
 		}
 	
@@ -174,7 +174,7 @@ public class AdminControllerUsers extends HttpServlet {
 	    request.setAttribute("userList", userList);
 	    request.setAttribute("feedbackMessage", message);
 	    
-	    RequestDispatcher rd = request.getRequestDispatcher("admin-panel.jsp");
+	    RequestDispatcher rd = request.getRequestDispatcher("admin-panel-user-check.jsp");
 	    rd.forward(request, response);
 	}
 

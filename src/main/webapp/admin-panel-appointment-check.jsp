@@ -74,18 +74,20 @@
 					  <li class="nav-item">
 					    <a class="nav-link active" href="">Consultant Appointments</a>
 					  </li>
+					  <li class="nav-item">
+					  	<a class="nav-link" href="getadconappointments?actiontype=all">
+					     <i class="fas fa-sync-alt"></i> Reset
+					   </a>
+					  </li>
 					</ul>
-					<br>
-					<div align="center">
-						<h2>Users</h2><br><br>
+				</div>
+				<br>
+			<div class="container">
+					    <div class="text-center">
+						<h2>Users</h2>
 					</div>
-				</div>
-				<div class="modal-footer">
-					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Refresh</button>
-				</div>
-				<br><br>
-				<div>
-					<table class="table table-striped">
+				<div class="mt-4">
+					        <table class="table table-striped">
 						<thead>
 							<tr>
 								<th>Appointment Number</th>
@@ -123,6 +125,7 @@
 						</tbody>
 					</table>
 				</div>
+			</div>
 			        
 				<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					        <div class="modal-dialog">
@@ -150,9 +153,5 @@
                 feedbackModal.show();
             }
         });
-        
-        function refreshPage() {
-            window.location.href = "getadconappointments?actiontype=all";
-          }
-    </script>
+     </script>
 </html>

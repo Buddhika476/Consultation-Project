@@ -69,18 +69,20 @@
 					  <li class="nav-item">
 					    <a class="nav-link active" href="#">My Appointments</a>
 					  </li>
+					  <li class="nav-item">
+					  	<a class="nav-link" href="getconsult?actiontype=all">
+					     <i class="fas fa-sync-alt"></i> Reset
+					   </a>
+					  </li>
 					</ul>
-					<br>
 				</div>
 				<br>
-				<div align="center">
-				<h2>Appointment</h2>
-				<div class="modal-footer">
-					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Refresh</button>
-				</div>
-				</div><br><br>
-				<div>
-					<table class="table table-striped">
+				<div class="container">
+					    <div class="text-center">
+							<h2>Appointment</h2>
+						</div>
+					<div class="mt-4">
+					        <table class="table table-striped">
 						<thead>
 							<tr>
 								<th>Appointment Number</th>
@@ -118,28 +120,30 @@
 						</tbody>
 					</table>
 				</div>
+			</div>
+			<br>
 				<div align="center">
-						<h2>Update</h2><br><br>
+						<h2>Update</h2><br>
+				<div class="col-md-4">
+					<form action="getconsult">
+						<div class="input-group" class="mb-2">
+							<input class="form-control form-control-sm" type="number" id="appointmentID" name="appointmentID" placeholder="Type the appointment number">
+                    		<input type="hidden" name="actiontype" value="single">
+                    		<button type="submit" class="btn btn-info btn-sm">Search</button>
+                		</div><br>
+					</form>
 				</div>
-				<div>
-					<div class="container">
-						<br>
-						<form action="getconsult">
-							<label for="appointmentID">Enter Appointment Number :</label>
-							<input class="form-control" type="number" id="appointmentID" name="appointmentID" placeholder="Type the appointment number">
-							<input type="hidden" name="actiontype" value="single">
-							<br>
-							<button type="submit" class="btn btn-info">Search</button>
-						</form>
-						<br>
+				<div class="col-md-4">
 						<form action="getconsult" method="post">
+						<div class="mb-2">
 							<label for="appointmentID">Appointment Number:</label>
 							<input class="form-control" type="number" id="appointmentID" name="appointmentID" readonly="readonly" value="${appointment.appointmentID}">
-							
+						</div>
+						<div class="mb-2">
 							<label for="appointmentDate">Appointment Date:</label>
 							<input class="form-control" type="text" id="appointmentDate" name="appointmentDate" value="${appointment.appointmentDate}">
-							
-							<div class="mb-3">
+						</div>
+						<div class="mb-2">
 			                        <label for="country" class="form-label">Country:</label>
 			                        <select class="form-control" name="country" id="country">
 			                            <option value="United States" ${appointment.country == 'United States' ? 'selected' : ''}>United States</option>
@@ -149,9 +153,9 @@
 			                            <option value="India" ${appointment.country == 'India' ? 'selected' : ''}>India</option>
 			                            <!-- Add more country options here -->
 			                        </select>
-			                </div>
+			               </div>
 			                
-			                <div class="mb-3">
+			                <div class="mb-2">
 			                        <label for="consultant" class="form-label">Consultant:</label>
 			                        <select class="form-control" name="consultant" id="consultant">
 			                            <option value="Mr.Arjuna" ${appointment.consultant == 'Mr.Arjuna' ? 'selected' : ''}>Mr.Arjuna</option>
@@ -161,9 +165,8 @@
 			                            <!-- Add more consultant options here -->
 			                        </select>
 			                 </div>
-			         
+			                 <br>
 							<input type="hidden" name="actiontype" value="edit">
-							<br>
 							<button type="submit" class="btn btn-warning">Update</button>
 						</form>
 					</div>
@@ -194,9 +197,5 @@
                 feedbackModal.show();
             }
         });
-        
-        function refreshPage() {
-            window.location.href = "getconsult?actiontype=all";
-          }
     </script>
 </html>

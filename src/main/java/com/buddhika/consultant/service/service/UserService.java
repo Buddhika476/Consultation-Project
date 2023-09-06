@@ -33,7 +33,7 @@ public class UserService {
 	}
 	
 	public boolean addUserAdmin(User user) throws ClassNotFoundException, SQLException {
-		return getUserService().addUserAdmin(user);
+		return  getUserDAO().addUserAdmin(user);
 		
 	}
 	
