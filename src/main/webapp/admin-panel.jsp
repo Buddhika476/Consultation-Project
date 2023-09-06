@@ -5,12 +5,12 @@
 <html>
 	<head>
 	    <meta charset="UTF-8">
-	    <title>Top Jobs Appoinment</title>
+	    <title>Top-Jobs-Admin-panel</title>
 	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 	    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
-		<body>
+		<body style="min-height: 100vh; display: flex; flex-direction: column;">
 		   <header>
 			 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 				  <div class="container-fluid">
@@ -69,54 +69,53 @@
 					    <a class="nav-link active" href="#">Add Users</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="getadusers?actiontype=all">Users</a>
+					    <a class="nav-link" href="getadmin?actiontype=all">Users</a>
 					  </li>
 					  <li class="nav-item">
 					    <a class="nav-link" href="getadconappointments?actiontype=all">Consultant Appointments</a>
 					  </li>
 					</ul>
 					<br>
-					<div align="center">
-						<h2>Users Handle</h2><br><br>
+					<div class="container mt-5">
+					    <div class="row justify-content-center">
+					        <div class="col-md-6">
+					            <form action="postadmin" method="post" onsubmit="return validateForm()">
+					                <h2 class="mb-4 text-center">Create New User</h2>
+					
+					                <div class="mb-3">
+					                    <label for="username" class="form-label">Your Name</label>
+					                    <input type="text" id="username" name="username" class="form-control" required minlength="3">
+					                </div>
+					                <div class="mb-3">
+					                    <label for="email" class="form-label">Your Email</label>
+					                    <input type="email" id="email" name="email" class="form-control" required>
+					                </div>
+					                <div class="mb-3">
+					                    <label for="password" class="form-label">Password</label>
+					                    <input type="password" id="password" name="password" class="form-control" required minlength="6" onkeyup="checkPasswordStrength()">
+					                    <div id="password-strength-indicator" class="mt-2"></div>
+					                </div>
+					                <div class="mb-3">
+					                    <label for="repeat_password" class="form-label">Repeat Password</label>
+					                    <input type="password" id="repeat_password" name="repeat_password" class="form-control" required minlength="6">
+					                </div>
+					                <div class="mb-3">
+					                    <label for="role" class="form-label">Role</label>
+					                    <select class="form-select" name="role" id="role">
+					                        <option value="Seeker">Seeker</option>
+					                        <option value="Consultant">Consultant</option>
+					                        <option value="Admin">Admin</option>
+					                        <!-- Add more consultant options here -->
+					                    </select>
+					                </div>
+					                <input type="hidden" name="actiontype" value="add" />
+					                <div class="d-grid mt-4">
+					                    <button type="submit" class="btn btn-primary btn-lg">Create User</button>
+					                </div>
+					            </form>
+					        </div>
+					    </div>
 					</div>
-					 			<form action="getaduserspost" method="post" onsubmit="return validateForm();">
-                                    <div class="mb-3">
-                                        <label for="username" class="form-label">Your Name</label>
-                                        <input type="text" id="username" name="username" class="form-control" required minlength="3">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Your Email</label>
-                                        <input type="email" id="email" name="email" class="form-control" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="password" id="password" name="password" class="form-control" required minlength="6" onkeyup="checkPasswordStrength()">
-                                        <div id="password-strength-indicator"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="repeat_password" class="form-label">Repeat Password</label>
-                                        <input type="password" id="repeat_password" name="repeat_password" class="form-control" required minlength="6">
-                                    </div>
-                                    <div class="mb-3">
-			                        <label for="role" class="form-label">Role</label>
-				                        <select class="form-select" name="role" id="role">
-				                            <option value="Seeker">Seeker</option>
-				                            <option value="Consultant">Consultant</option>
-				                            <option value="Admin">Admin</option>
-				                            <!-- Add more consultant options here -->
-				                        </select>
-			          				</div>
-                                    <div class="form-check mb-4">
-                                        <input class="form-check-input" type="checkbox" id="agree_terms" required>
-                                        <label class="form-check-label" for="agree_terms">
-                                            I agree to the <a href="#!">Terms of Service</a>
-                                        </label>
-                                    </div>
-                                    <input type="hidden" name="actiontype" value="add" />
-                                    <div class="d-flex justify-content-center mb-4">
-                                        <button type="submit" class="btn btn-primary btn-lg">Add User</button>
-                                    </div>
-                                </form>
 				</div>
 				<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					        <div class="modal-dialog">
@@ -134,8 +133,16 @@
 					             </div>
 					         </div>
 					</div>
+					    <footer class="bg-light text-center text-lg-start mt-auto">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-dark" href="#">TopJobs.lk</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
-</body>
+		</body>
 		<script>
 	        // JavaScript to display the feedback message in a modal
 	        window.addEventListener('DOMContentLoaded', () => {

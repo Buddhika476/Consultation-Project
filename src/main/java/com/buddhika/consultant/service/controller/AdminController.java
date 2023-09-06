@@ -16,7 +16,7 @@ import com.buddhika.consultant.service.service.UserService;
 import com.buddhika.consultant.service.model.User;
 
 
-public class AdminControllerUsers extends HttpServlet {
+public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	String message = "";
@@ -49,11 +49,11 @@ public class AdminControllerUsers extends HttpServlet {
 		else if(actionType.equals("delete")) {
 			deleteUser(request,response);
 		}else if(actionType.equals("add")) {
-			addUserAdmin(request,response);
+			addUser(request,response);
 		}
 	}
 	
-	private void addUserAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void addUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		clearMessage();
 		
@@ -128,7 +128,7 @@ public class AdminControllerUsers extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("message", message);
-		response.sendRedirect("getadusers?actiontype=all");
+		response.sendRedirect("getadmin?actiontype=all");
 		
 	}
 	
@@ -151,7 +151,7 @@ public class AdminControllerUsers extends HttpServlet {
 			message = e.getMessage();
 		}
 		request.setAttribute("feedbackMessage", message);
-		RequestDispatcher rd = request.getRequestDispatcher("getadusers?actiontype=all");
+		RequestDispatcher rd = request.getRequestDispatcher("getadmin?actiontype=all");
 		rd.forward(request, response);
 	}
 	
@@ -183,4 +183,3 @@ public class AdminControllerUsers extends HttpServlet {
 		message = "";
 	}
 }
-

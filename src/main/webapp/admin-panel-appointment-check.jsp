@@ -5,12 +5,12 @@
 <html>
 	<head>
 	    <meta charset="UTF-8">
-	    <title>Top Jobs Appoinment</title>
+	    <title>Top-Jobs-Admin-panel</title>
 	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 	    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
-		<body>
+		<body style="min-height: 100vh; display: flex; flex-direction: column;">
 		   <header>
 			 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 				  <div class="container-fluid">
@@ -66,13 +66,13 @@
 				<div class="container">
 					<ul class="nav nav-tabs">
 					  <li class="nav-item">
-					    <a class="nav-link" href="admin-panel-user-add.jsp">Add Users</a>
+					    <a class="nav-link" href="admin-panel.jsp">Add Users</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="getadusers?actiontype=all">Users</a>
+					    <a class="nav-link" href="getadmin?actiontype=all">Users</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link active" href="">Consultant Appointments</a>
+					    <a class="nav-link active" href="#">Consultant Appointments</a>
 					  </li>
 					  <li class="nav-item">
 					  	<a class="nav-link" href="getadconappointments?actiontype=all">
@@ -84,7 +84,7 @@
 				<br>
 			<div class="container">
 					    <div class="text-center">
-						<h2>Users</h2>
+						<h2>Appointment Received to Consultants</h2>
 					</div>
 				<div class="mt-4">
 					        <table class="table table-striped">
@@ -114,7 +114,7 @@
 									<td>${appointment.country}</td>
 									<td>${appointment.consultant}</td>
 									<td>
-										<form action="getadconappointments">
+										<form action="getadconappointments" method="post">
 											<input type="hidden" name="appointmentID" value="${appointment.appointmentID}" >
 											<input type="hidden" name="actiontype" value="delete">
 											<button type="submit" class="btn btn-danger">Delete</button>
@@ -143,6 +143,14 @@
 					            </div>
 					        </div>
 					     </div>
+					         <footer class="bg-light text-center text-lg-start mt-auto">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-dark" href="#">TopJobs.lk</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 		</body>
 		<script>
         // JavaScript to display the feedback message in a modal

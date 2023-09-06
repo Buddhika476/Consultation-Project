@@ -40,6 +40,12 @@
   	<description></description>
   	<servlet-class>com.buddhika.consultant.service.controller.AdminControllerUsers</servlet-class>
   </servlet>
+    <servlet>
+  	<servlet-name>AdminController</servlet-name>
+  	<display-name>AdminController</display-name>
+  	<description></description>
+  	<servlet-class>com.buddhika.consultant.service.controller.AdminController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationController</servlet-name>
   	<url-pattern>/userdao</url-pattern>
@@ -70,7 +76,15 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>AdminControllerUsers</servlet-name>
-  	<url-pattern>/getaduserspost</url-pattern>
+  	<url-pattern>/postaduserspost</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminController</servlet-name>
+  	<url-pattern>/postadmin</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>AdminController</servlet-name>
+  	<url-pattern>/getadmin</url-pattern>
   </servlet-mapping>
   
 </web-app>

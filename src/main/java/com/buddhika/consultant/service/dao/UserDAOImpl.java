@@ -49,7 +49,7 @@ public class UserDAOImpl implements UserDAO {
 		return result;
 	}
 	
-	public boolean addUserAdmin(User user) throws SQLException, ClassNotFoundException {
+	/*public boolean addUserAdmin(User user) throws SQLException, ClassNotFoundException {
 		
 		Connection connection = getConnection();
 		
@@ -70,7 +70,7 @@ public class UserDAOImpl implements UserDAO {
 		connection.close();
 		return result;
 	}
-	
+	*/
 	public boolean loginUser(User user) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = getConnection();

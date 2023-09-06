@@ -5,12 +5,12 @@
 <html>
 	<head>
 	    <meta charset="UTF-8">
-	    <title>Top Jobs Appoinment</title>
+	    <title>Top Jobs User Appointment</title>
 	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 	    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
-		<body>
+		<body style="min-height: 100vh; display: flex; flex-direction: column;">
 		   <header>
 			 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 				  <div class="container-fluid">
@@ -189,7 +189,13 @@
 					     </div>
 			         </div>
 			      </div>
-			  </div>
+			      <br><br>
+		<footer class="bg-light text-center text-lg-start mt-auto">
+	        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+	            © 2023 Copyright:
+	            <a class="text-dark" href="#">TopJobs.lk</a>
+	        </div>
+    	</footer>
 		</body>
 		<script>
 	        // JavaScript to display the feedback message in a modal

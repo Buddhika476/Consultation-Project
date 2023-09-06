@@ -42,41 +42,11 @@ public class AdminControllerAppointments extends HttpServlet {
 		
 		String actionType = request.getParameter("actiontype");
 		
-		if(actionType.equals("edit")) {
-			editAppointment(request,response);
-		}
-		else if(actionType.equals("delete")) {
+		if(actionType.equals("delete")) {
 			deleteAppointment(request,response);
 		}
 	}
-	
-	
-	private void editAppointment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-			clearMessage();
-			
-			Appointment appointment = new Appointment();
-			
-			appointment.setAppointmentID(Integer.parseInt(request.getParameter("appointmentID")));
-			appointment.setAppointmentDate(request.getParameter("appointmentDate"));
-			appointment.setCountry(request.getParameter("country"));
-			appointment.setConsultant(request.getParameter("consultant"));
-			
-			try {
-				if(getAppointmentService().editAppointment(appointment)) {
-					message = "The appointment has been successfully updated! product code :" + appointment.getAppointmentID();
-				}
-				else {
-					message = "Failed to update the appointment! product code :" + appointment.getAppointmentID();
-				}
-			} catch (ClassNotFoundException | SQLException e) {
-				message = e.getMessage();		
-				}
-			
-			request.setAttribute("feedbackMessage", message);
-			RequestDispatcher rd = request.getRequestDispatcher("admin-panel-appointment-check.jsp");
-			rd.forward(request, response);
-		}
+
 	
 	private void deleteAppointment(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		clearMessage();

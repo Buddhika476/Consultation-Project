@@ -28,7 +28,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 
 	@Override
 	public boolean addAppointment(Appointment appointment) throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
+		
 		Connection connection = getConnection();
 		
 		
