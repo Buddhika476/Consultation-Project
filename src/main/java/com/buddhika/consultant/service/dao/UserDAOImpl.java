@@ -28,7 +28,29 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean addUser(User user) throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
+	
+		Connection connection = getConnection();
+		
+		
+		String query = "INSERT INTO user(username, password, email, role) VALUES (?,?,?,?)";
+		PreparedStatement ps = connection.prepareStatement(query) ;
+		ps.setString(1, user.getUsername());
+		ps.setString(2, user.getPassword());
+		ps.setString(3, user.getEmail());
+		ps.setString(4, user.getRole());
+		
+		boolean result = false;
+		
+		if(ps.executeUpdate() > 0)
+			result = true;
+		
+		ps.close();
+		connection.close();
+		return result;
+	}
+	
+	public boolean addUserAdmin(User user) throws SQLException, ClassNotFoundException {
+		
 		Connection connection = getConnection();
 		
 		

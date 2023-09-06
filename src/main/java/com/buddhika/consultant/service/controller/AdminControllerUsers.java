@@ -48,9 +48,38 @@ public class AdminControllerUsers extends HttpServlet {
 		}
 		else if(actionType.equals("delete")) {
 			deleteUser(request,response);
+		}else if(actionType.equals("add")) {
+			addUserAdmin(request,response);
 		}
 	}
 	
+	private void addUserAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		clearMessage();
+		
+		User user = new User();
+		user.setUsername(request.getParameter("username"));
+		user.setEmail(request.getParameter("email"));
+		user.setPassword(request.getParameter("password"));
+		user.setRole(request.getParameter("role"));
+		try {
+			if(getUserService().addUser(user)) {
+				message = "Registration successfull";
+			}
+			else {
+				message = "faild to Register";
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			
+			message = "fail operation" + e.getMessage();
+		}
+		
+		request.setAttribute("feedbackMessage", message); 
+		RequestDispatcher rd = request.getRequestDispatcher("admin-panel-user-add.jsp");
+		rd.forward(request, response);
+		
+	}
+
 	private void editUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 			clearMessage();
@@ -75,7 +104,7 @@ public class AdminControllerUsers extends HttpServlet {
 				}
 			
 			request.setAttribute("feedbackMessage", message);
-			RequestDispatcher rd = request.getRequestDispatcher("consultant-panel.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("admin-panel.jsp");
 			rd.forward(request, response);
 		}
 	
@@ -99,7 +128,7 @@ public class AdminControllerUsers extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("message", message);
-		response.sendRedirect("getappointment?actiontype=all");
+		response.sendRedirect("getadusers?actiontype=all");
 		
 	}
 	
@@ -122,7 +151,7 @@ public class AdminControllerUsers extends HttpServlet {
 			message = e.getMessage();
 		}
 		request.setAttribute("feedbackMessage", message);
-		RequestDispatcher rd = request.getRequestDispatcher("getconsult?actiontype=all");
+		RequestDispatcher rd = request.getRequestDispatcher("getadusers?actiontype=all");
 		rd.forward(request, response);
 	}
 	
@@ -145,7 +174,7 @@ public class AdminControllerUsers extends HttpServlet {
 	    request.setAttribute("userList", userList);
 	    request.setAttribute("feedbackMessage", message);
 	    
-	    RequestDispatcher rd = request.getRequestDispatcher("consultant-panel.jsp");
+	    RequestDispatcher rd = request.getRequestDispatcher("admin-panel.jsp");
 	    rd.forward(request, response);
 	}
 

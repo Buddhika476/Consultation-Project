@@ -68,6 +68,10 @@
   	<servlet-name>AdminControllerUsers</servlet-name>
   	<url-pattern>/getadusers</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminControllerUsers</servlet-name>
+  	<url-pattern>/getaduserspost</url-pattern>
+  </servlet-mapping>
   
 </web-app>
 

@@ -38,7 +38,6 @@ public class AdminControllerAppointments extends HttpServlet {
 		}
 	}
 	
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String actionType = request.getParameter("actiontype");
@@ -50,6 +49,7 @@ public class AdminControllerAppointments extends HttpServlet {
 			deleteAppointment(request,response);
 		}
 	}
+	
 	
 	private void editAppointment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
@@ -74,7 +74,7 @@ public class AdminControllerAppointments extends HttpServlet {
 				}
 			
 			request.setAttribute("feedbackMessage", message);
-			RequestDispatcher rd = request.getRequestDispatcher("consultant-panel.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("admin-panel-appointment-check.jsp");
 			rd.forward(request, response);
 		}
 	
@@ -98,7 +98,7 @@ public class AdminControllerAppointments extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("message", message);
-		response.sendRedirect("getappointment?actiontype=all");
+		response.sendRedirect("getadconappointments?actiontype=all");
 		
 	}
 	
@@ -121,7 +121,7 @@ public class AdminControllerAppointments extends HttpServlet {
 			message = e.getMessage();
 		}
 		request.setAttribute("feedbackMessage", message);
-		RequestDispatcher rd = request.getRequestDispatcher("getconsult?actiontype=all");
+		RequestDispatcher rd = request.getRequestDispatcher("getadconappointments?actiontype=all");
 		rd.forward(request, response);
 	}
 	
@@ -144,7 +144,7 @@ public class AdminControllerAppointments extends HttpServlet {
 	    request.setAttribute("appointmentList", appointmentList);
 	    request.setAttribute("feedbackMessage", message);
 	    
-	    RequestDispatcher rd = request.getRequestDispatcher("consultant-panel.jsp");
+	    RequestDispatcher rd = request.getRequestDispatcher("admin-panel-appointment-check.jsp");
 	    rd.forward(request, response);
 	}
 

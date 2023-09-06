@@ -7,6 +7,7 @@ import com.buddhika.consultant.service.model.User;
 
 public interface UserDAO {
 	
+	public boolean addUserAdmin(User user) throws SQLException, ClassNotFoundException;
 	public boolean addUser(User user) throws SQLException, ClassNotFoundException;
 	public boolean editUser(User user) throws SQLException, ClassNotFoundException;
 	boolean deleteUser(int userID) throws SQLException, ClassNotFoundException;

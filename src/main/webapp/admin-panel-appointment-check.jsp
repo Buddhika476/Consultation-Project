@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
-   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -69,10 +69,10 @@
 					    <a class="nav-link" href="admin-panel-user-add.jsp">Add Users</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link active" href="#">Users</a>
+					    <a class="nav-link" href="getadusers?actiontype=all">Users</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="getadconappointments?actiontype=all">Consultant Appointments</a>
+					    <a class="nav-link active" href="">Consultant Appointments</a>
 					  </li>
 					</ul>
 					<br>
@@ -82,31 +82,38 @@
 				</div>
 				<div class="modal-footer">
 					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Refresh</button>
-				</div><br><br>
+				</div>
+				<br><br>
 				<div>
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>User ID</th>
-								<th>User Name</th>
+								<th>Appointment Number</th>
+								<th>First Name</th>
+								<th>Last Name</th>
 								<th>Email</th>
-								<th>Password</th>
-								<th>Role</th>
-								<th></th>
+								<th>Contact Number</th>
+								<th>Appointment Date</th>			
+								<th>Country</th>
+								<th>Consultant</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="user" items="${userList}">
+							<c:forEach var="appointment" items="${appointmentList}">
 								<tr>
 									
-									<td>${user.userID}</td>
-									<td>${user.username}</td>
-									<td>${user.email}</td>
-									<td>${user.password}</td>
-									<td>${user.role}</td>
+									<td>${appointment.appointmentID}</td>
+									<td>${appointment.firstName}</td>
+									<td>${appointment.lastName}</td>
+									<td>${appointment.email}</td>
+									<td>${appointment.contactNumber}</td>
+									<td>${appointment.appointmentDate}</td>
+									<td>${appointment.country}</td>
+									<td>${appointment.consultant}</td>
 									<td>
-										<form action="getaduserspost">
-											<input type="hidden" name="userID" value="${user.userID}" >
+										<form action="getadconappointments">
+											<input type="hidden" name="appointmentID" value="${appointment.appointmentID}" >
 											<input type="hidden" name="actiontype" value="delete">
 											<button type="submit" class="btn btn-danger">Delete</button>
 										</form>
@@ -116,46 +123,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div align="center">
-						<h2>Update</h2><br><br>
-				</div>
-				<div>
-					<div class="container">
-						<br>
-						<form action="getadusers">
-							<label for="userID">Enter User ID :</label>
-							<input class="form-control" type="number" id="userID" name="userID" placeholder="Type the user ID">
-							<input type="hidden" name="actiontype" value="single">
-							<br>
-							<button type="submit" class="btn btn-info">Search</button>
-						</form>
-						<br>
-						<form action="getadusers" method="post">
-							<label for="userID">User ID:</label>
-							<input class="form-control" type="number" id="userID" name="userID" readonly="readonly" value="${user.userID}">
-							
-							<label for="username">Username:</label>
-							<input class="form-control" type="text" id="username" name="username" value="${user.username}">
-							
-							<label for="email">Email:</label>
-							<input class="form-control" type="text" id="email" name="email" value="${user.email}">
-							<label for="password">Password:</label>
-							<input class="form-control" type="text" id="password" name="password" value="${user.password}">
-							<div class="mb-3">
-			                        <label for="role" class="form-label">Role:</label>
-			                        <select class="form-control" name="role" id="role">
-			                            <option value="Seeker" ${user.role == 'Seeker' ? 'selected' : ''}>Seeker</option>
-			                            <option value="Consultant" ${user.role == 'Consultant' ? 'selected' : ''}>Consultant</option>
-			                            <option value="Admin" ${user.role == 'Admin' ? 'selected' : ''}>Admin</option>
-			                            <!-- Add more country options here -->
-			                        </select>
-			                </div>         
-							<input type="hidden" name="actiontype" value="edit">
-							<br>
-							<button type="submit" class="btn btn-warning">Update</button>
-						</form>
-					</div>
-				</div>
+			        
 				<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					        <div class="modal-dialog">
 					            <div class="modal-content">
@@ -184,7 +152,7 @@
         });
         
         function refreshPage() {
-            window.location.href = "getadusers?actiontype=all";
+            window.location.href = "getadconappointments?actiontype=all";
           }
     </script>
 </html>
