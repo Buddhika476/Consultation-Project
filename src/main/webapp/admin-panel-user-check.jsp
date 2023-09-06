@@ -100,16 +100,16 @@
 					                </tr>
 					            </thead>
 					            <tbody>
-					                <c:forEach var="user1" items="${userList}">
+					                <c:forEach var="user" items="${userList}">
 					                    <tr>
-					                        <td>${user1.userID}</td>
-					                        <td>${user1.username}</td>
-					                        <td>${user1.email}</td>
-					                        <td>${user1.password}</td>
-					                        <td>${user1.role}</td>
+					                        <td>${user.userID}</td>
+					                        <td>${user.username}</td>
+					                        <td>${user.email}</td>
+					                        <td>${user.password}</td>
+					                        <td>${user.role}</td>
 					                        <td>
 					                            <form action="postadmin" method="post">
-					                                <input type="hidden" name="userID" value="${user1.userID}">
+					                                <input type="hidden" name="userID" value="${user.userID}">
 					                                <input type="hidden" name="actiontype" value="delete">
 					                                <button type="submit" class="btn btn-danger">Delete</button>
 					                            </form>
@@ -119,16 +119,16 @@
 					            </tbody>
 					        </table>
 					    </div>
-					
+					    			
 					    <div class="text-center mt-5">
 					        <h2>Update</h2><br>
 					    </div>
 				<div align="center">	    
         <!-- Search User Section -->
         <div class="col-md-4">
-            <form action="getadmin" onsubmit="return validateForm()">
+            <form action="postadmin">
                 <div class="input-group" class="mb-2">
-                    <input class="form-control form-control-sm" type="number" id="userID" name="userID" placeholder="Enter User ID">
+                    <input class="form-control form-control-sm" type="number" id="userid" name="userID" placeholder="Enter User ID">
                     <input type="hidden" name="actiontype" value="single">
                     <button type="submit" class="btn btn-info btn-sm">Search</button>
                 </div>
@@ -138,24 +138,24 @@
         <div class="col-md-4">
             <form action="postadmin" method="post">
                 <div class="mb-2">
-                    <label for="userID" class="form-label">User ID:</label>
-                    <input class="form-control form-control-sm" type="number" id="userID" name="userID" readonly="readonly" value="${user.userID}">
+                    <label for="userid" class="form-label">User ID:</label>
+                    <input class="form-control form-control-sm" type="number" id="userid" name="userID" readonly="readonly" value="${user.userID}">
                 </div>
                 <div class="mb-2">
-                    <label for="username" class="form-label">Username:</label>
-                    <input class="form-control form-control-sm" type="text" id="username" name="username" value="${user.username}">
+                    <label for="userName" class="form-label">Username:</label>
+                    <input class="form-control form-control-sm" type="text" id="userName" name="username" value="${user.username}">
                 </div>
                 <div class="mb-2">
-                    <label for="email" class="form-label">Email:</label>
-                    <input class="form-control form-control-sm" type="text" id="email" name="email" value="${user.email}">
+                    <label for="Email" class="form-label">Email:</label>
+                    <input class="form-control form-control-sm" type="text" id="Email" name="email" value="${user.email}">
                 </div>
                 <div class="mb-2">
-                    <label for="password" class="form-label">Password:</label>
-                    <input class="form-control form-control-sm" type="text" id="password" name="password" value="${user.password}">
+                    <label for="Password" class="form-label">Password:</label>
+                    <input class="form-control form-control-sm" type="text" id="Password" name="password" value="${user.password}">
                 </div>
                 <div class="mb-2">
-                    <label for="role" class="form-label">Role:</label>
-                    <select class="form-control form-control-sm" name="role" id="role">
+                    <label for="Role" class="form-label">Role:</label>
+                    <select class="form-control form-control-sm" name="role" id="Role">
                         <option value="Seeker" ${user.role == 'Seeker' ? 'selected' : ''}>Seeker</option>
                         <option value="Consultant" ${user.role == 'Consultant' ? 'selected' : ''}>Consultant</option>
                         <option value="Admin" ${user.role == 'Admin' ? 'selected' : ''}>Admin</option>
@@ -168,6 +168,7 @@
         </div>
     </div>
 </div>
+--%>	
 		<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					        <div class="modal-dialog">
 					            <div class="modal-content">

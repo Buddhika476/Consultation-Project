@@ -64,10 +64,10 @@ public class AdminController extends HttpServlet {
 		user.setRole(request.getParameter("role"));
 		try {
 			if(getUserService().addUser(user)) {
-				message = "Registration successfull";
+				message = "Created Susseccfully";
 			}
 			else {
-				message = "faild to Register";
+				message = "faild to Create user";
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			
@@ -97,7 +97,7 @@ public class AdminController extends HttpServlet {
 					message = "The user has been successfully updated! product code :" + user.getUserID();
 				}
 				else {
-					message = "Failed to update the appointment! product code :" + user.getUserID();
+					message = "Failed to update the user! product code :" + user.getUserID();
 				}
 			} catch (ClassNotFoundException | SQLException e) {
 				message = e.getMessage();		
