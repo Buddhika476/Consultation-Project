@@ -10,7 +10,7 @@
 	    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
-	<body>
+	<body style="min-height: 100vh; display: flex; flex-direction: column;">
 		<div align="center">
 			<h1>One of Best Service</h1>
 		</div>
@@ -63,6 +63,7 @@
 			</nav>
 			<br>
 			<div align = "center">
+			<br><br><br><br><br><br><br><br><br>
 			<a href="registration.jsp">
 				<button type="button" class="btn btn-primary btn-lg" >Join Now</button>
 			</a>
