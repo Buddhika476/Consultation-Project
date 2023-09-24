@@ -63,94 +63,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					        <div class="modal-dialog">
-					            <div class="modal-content">
-					                <div class="modal-header">
-					                    <h5 class="modal-title" id="exampleModalLabel">Feedback Message</h5>
-					                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					                </div>
-					                <div class="modal-body">
-					                    <p style="color: green">${feedbackMessage}</p>
-					                </div>
-					                <div class="modal-footer">
-					                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					                </div>
-					             </div>
-					         </div>
-					        </div>
-                            <script>
-                                function validateForm() {
-                                    var password = document.getElementById("password").value;
-                                    var repeatPassword = document.getElementById("repeat_password").value;
-
-                                    if (password !== repeatPassword) {
-                                        alert("Password and Repeat Password do not match.");
-                                        return false;
-                                    }
-
-                                    return true;
-                                }
-
-                                function redirectToLogin() {
-                                    window.location.href = 'login.jsp';
-                                }
-
-                                function checkPasswordStrength() {
-                                    var password = document.getElementById("password").value;
-                                    var strengthIndicator = document.getElementById("password-strength-indicator");
-
-                                    // Define your password strength criteria here
-                                    var criteria = [
-                                        { label: "Lowercase", regex: /[a-z]/ },
-                                        { label: "Uppercase", regex: /[A-Z]/ },
-                                        { label: "Number", regex: /[0-9]/ },
-                                        { label: "Special Character", regex: /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/ }
-                                    ];
-
-                                    var strength = 0;
-
-                                    criteria.forEach(function (rule) {
-                                        if (rule.regex.test(password)) {
-                                            strength++;
-                                        }
-                                    });
-
-                                    // Adjust the minimum strength required as needed
-                                    var minStrength = 3; // For example, require at least 3 out of 4 criteria
-
-                                    // Determine the color based on strength
-                                    var colorClass = "";
-                                    if (strength >= minStrength) {
-                                        colorClass = "text-success"; // Strong password
-                                    } else if (strength > 0) {
-                                        colorClass = "text-warning"; // Moderate password
-                                    } else {
-                                        colorClass = "text-danger"; // Weak password
-                                    }
-
-                                    // Update the password strength indicator
-                                    var strengthText = "";
-                                    if (strength >= minStrength) {
-                                        strengthText = "Strong Password";
-                                    } else if (strength > 0) {
-                                        strengthText = "Moderate Password";
-                                    } else {
-                                        strengthText = "Weak Password";
-                                    }
-
-                                    strengthIndicator.innerHTML = `<strong class="${colorClass}">${strengthText}</strong>`;
-                                }
-                                
-                             // JavaScript to display the feedback message in a modal
-                    	        window.addEventListener('DOMContentLoaded', () => {
-                    	            const feedbackMessage = "${feedbackMessage}";
-                    	            if (feedbackMessage) {
-                    	                const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
-                    	                feedbackModal.show();
-                    	            }
-                    	        });
-                            </script>
+                           
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                                      class="img-fluid" alt="Sample image">
@@ -162,6 +75,93 @@
         </div>
     </div>
 </section>
+	<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Feedback Message</h5>
+					    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+				<div class="modal-body">
+					 <p style="color: green">${feedbackMessage}</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	function validateForm() {
+        var password = document.getElementById("password").value;
+        var repeatPassword = document.getElementById("repeat_password").value;
+
+        if (password !== repeatPassword) {
+            alert("Password and Repeat Password do not match.");
+            return false;
+        }
+
+        return true;
+    }
+
+    function checkPasswordStrength() {
+        var password = document.getElementById("password").value;
+        var strengthIndicator = document.getElementById("password-strength-indicator");
+
+        // Define your password strength criteria here
+        var criteria = [
+            { label: "Lowercase", regex: /[a-z]/ },
+            { label: "Uppercase", regex: /[A-Z]/ },
+            { label: "Number", regex: /[0-9]/ },
+            { label: "Special Character", regex: /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/ }
+        ];
+
+        var strength = 0;
+
+        criteria.forEach(function (rule) {
+            if (rule.regex.test(password)) {
+                strength++;
+            }
+        });
+
+        // Adjust the minimum strength required as needed
+        var minStrength = 3; // For example, require at least 3 out of 4 criteria
+
+        // Determine the color based on strength
+        var colorClass = "";
+        if (strength >= minStrength) {
+            colorClass = "text-success"; // Strong password
+        } else if (strength > 0) {
+            colorClass = "text-warning"; // Moderate password
+        } else {
+            colorClass = "text-danger"; // Weak password
+        }
+
+        // Update the password strength indicator
+        var strengthText = "";
+        if (strength >= minStrength) {
+            strengthText = "Strong Password";
+        } else if (strength > 0) {
+            strengthText = "Moderate Password";
+        } else {
+            strengthText = "Weak Password";
+        }
+
+        strengthIndicator.innerHTML = `<strong class="${colorClass}">${strengthText}</strong>`;
+    }
+    
+        // JavaScript to display the feedback message in a modal
+        window.addEventListener('DOMContentLoaded', () => {
+            const feedbackMessage = "${feedbackMessage}";
+            if (feedbackMessage) {
+                const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+                feedbackModal.show();
+            }
+        });
+        function redirectToLogin() {
+            window.location.href = 'login.jsp';
+        }
+    </script>
 </body>
 </html>
 

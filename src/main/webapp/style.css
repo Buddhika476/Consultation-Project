@@ -50,3 +50,49 @@
 .calendar-button:hover {
     background-color: #0056b3;
 }
+
+body {
+    background-image: url('img');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        /* Styles for individual slides */
+        .mySlides {
+            display: none;
+        }
+
+        /* Styles for the Join Now button */
+        .join-button {
+            position: absolute;
+            bottom: 20px; /* Adjust the vertical position as needed */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Style for navigation dots */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        /* Active dot */
+        .active {
+            background-color: #717171;
+        }
+ .profile {
+            width: 250px; 
+            height: 300px; 
+            border-radius: 15px;
+ }

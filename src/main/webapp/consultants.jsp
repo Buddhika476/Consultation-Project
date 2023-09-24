@@ -28,17 +28,9 @@
 				          <a class="nav-link active" href="#">Consultants</a>
 				        </li>
 				        <li class="nav-item">
-				          <a class="nav-link" href="user-appointment.jsp">Appoinments</a>
+				          <a class="nav-link" href="user-appointment.jsp">Appointments</a>
 				        </li>
-				        <li class="nav-item dropdown">
-						    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">More</a>
-						    <ul class="dropdown-menu">
-						      <li><a class="dropdown-item" href="#">About Us</a></li>
-						      <li><a class="dropdown-item" href="#">FAQ</a></li>
-						      <li><hr class="dropdown-divider"></li>
-						      <li><a class="dropdown-item" href="#">Contact Us</a></li>
-						    </ul>
-						</li>
+				
 				      </ul>
 				      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
 					    <li class="nav-item">
@@ -72,34 +64,34 @@
 			    <div class="consultant-cards">
 			        <!-- Card 1 -->
 			        <div class="consultant-card">
-			            <img src="https://www.shutterstock.com/image-vector/seo-consultant-icon-769754404" alt="Consultant Image 1">
-			            <h3 class="consultant-name">John Doe</h3>
+			            <img class="profile" src="https://www.shutterstock.com/image-vector/seo-consultant-icon-769754404" alt="Consultant Image 1">
+			            <h3 class="consultant-name">Mr.Chathuranga</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 2 -->
 			        <div class="consultant-card">
-			            <img src="consultant-image-2.jpg" alt="Consultant Image 2">
-			            <h3 class="consultant-name">Jane Smith</h3>
+			            <img class="profile" src="consultant-image-2.jpg" alt="Consultant Image 2">
+			            <h3 class="consultant-name">Mr.Randika</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 3 -->
 			        <div class="consultant-card">
-			            <img src="consultant-image-3.jpg" alt="Consultant Image 3">
-			            <h3 class="consultant-name">Mike Johnson</h3>
+			            <img class="profile" src="img/bp.jpg" alt="buddhika">
+			            <h3 class="consultant-name">Mr.Buddhika</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 4 -->
 			        <div class="consultant-card">
-			            <img src="consultant-image-4.jpg" alt="Consultant Image 4">
-			            <h3 class="consultant-name">Sara Davis</h3>
+			            <img class="profile" src="consultant-image-4.jpg" alt="Consultant Image 4">
+			            <h3 class="consultant-name">Mr.Arjuna</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			    </div>
 			</section>
@@ -109,33 +101,33 @@
 			        <!-- Card 1 -->
 			        <div class="consultant-card">
 			            <img src="consultant-image-1.jpg" alt="Consultant Image 1">
-			            <h3 class="consultant-name">John Doe</h3>
+			            <h3 class="consultant-name">Mr.Chathuranga</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 2 -->
 			        <div class="consultant-card">
 			            <img src="consultant-image-2.jpg" alt="Consultant Image 2">
-			            <h3 class="consultant-name">Jane Smith</h3>
+			            <h3 class="consultant-name">Mr.Randika</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="btn btn-danger">Add Apoinment</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 3 -->
 			        <div class="consultant-card">
-			            <img src="consultant-image-3.jpg" alt="Consultant Image 3">
-			            <h3 class="consultant-name">Mike Johnson</h3>
+			            <img class="profile" src="img/bp.jpg" alt="buddhika">
+			            <h3 class="consultant-name">Mr.Buddhika</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 4 -->
 			        <div class="consultant-card">
 			            <img src="consultant-image-4.jpg" alt="Consultant Image 4">
-			            <h3 class="consultant-name">Sara Davis</h3>
+			            <h3 class="consultant-name">Mr.Arjuna</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			    </div>
 			</section>
@@ -145,36 +137,42 @@
 			        <!-- Card 1 -->
 			        <div class="consultant-card">
 			            <img src="consultant-image-1.jpg" alt="Consultant Image 1">
-			            <h3 class="consultant-name">John Doe</h3>
+			            <h3 class="consultant-name">Mr.Chathuranga</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 2 -->
 			        <div class="consultant-card">
 			            <img src="consultant-image-2.jpg" alt="Consultant Image 2">
-			            <h3 class="consultant-name">Jane Smith</h3>
+			            <h3 class="consultant-name">Mr.Randika</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 3 -->
 			        <div class="consultant-card">
-			            <img src="consultant-image-3.jpg" alt="Consultant Image 3">
-			            <h3 class="consultant-name">Mike Johnson</h3>
+			            <img class="profile" src="img/bp.jpg" alt="buddhika">
+			            <h3 class="consultant-name">Mr.Buddhika</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			
 			        <!-- Card 4 -->
 			        <div class="consultant-card">
 			            <img src="consultant-image-4.jpg" alt="Consultant Image 4">
-			            <h3 class="consultant-name">Sara Davis</h3>
+			            <h3 class="consultant-name">Mr.Arjuna</h3>
 			            <p class="availability-status">Available</p>
-			            <button class="calendar-button">View Calendar</button>
+			            <button class="btn btn-danger" onclick="redirectToAppointments()">Add Appointment</button>
 			        </div>
 			    </div>
 			</section>
+			<script type="text/javascript">
+			
+				function redirectToAppointments() {
+		            window.location.href = 'user-appointment.jsp';
+		        }
+			</script>
 			
 		    <footer class="bg-light text-center text-lg-start mt-auto">
         <!-- Copyright -->

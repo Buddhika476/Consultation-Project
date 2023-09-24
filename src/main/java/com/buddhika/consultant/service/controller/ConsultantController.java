@@ -91,10 +91,6 @@ public class ConsultantController extends HttpServlet {
 			message = e.getMessage();
 		}
 		
-		//request.setAttribute("feedbackMessage", message);
-		//RequestDispatcher rd = request.getRequestDispatcher("search-al-and-delete.jsp");
-		//rd.forward(request, response);
-		
 		HttpSession session = request.getSession();
 		session.setAttribute("message", message);
 		response.sendRedirect("getappointment?actiontype=all");

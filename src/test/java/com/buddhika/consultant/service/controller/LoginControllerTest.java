@@ -10,11 +10,7 @@ class LoginControllerTest {
 
 	@Test
     void testValidLogin() {
-        // Test a valid login scenario with correct credentials.
-        LoginController loginController = new LoginController();
-        
-        User user  = new User();
-        
+        String Name;
         
     }
 

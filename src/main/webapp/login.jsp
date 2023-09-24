@@ -21,7 +21,6 @@
                   </a>
 	              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 	                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
-	                <p style="color:magenta">${feedbackMessage}</p>
 	                <form action="login" method="post"> <!-- Updated action and method -->
 	                  <div class="d-flex flex-row align-items-center mb-4">
 	                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -58,11 +57,6 @@
 	                 <input type="hidden" name="actiontype" value="login"/> <!-- Hidden field for action type -->
 	                </form>
 	              </div>
-	              <script>
-					    function redirectToSignup() {
-					        window.location.href = 'registration.jsp';
-					    }
-				  </script>
 	              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 	                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
 	                  class="img-fluid" alt="Sample image">
@@ -74,6 +68,35 @@
 	    </div>
 	  </div>
 	</section> 
+	<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Feedback Message</h5>
+					    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+				<div class="modal-body">
+					 <p style="color: green">${feedbackMessage}</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+        // JavaScript to display the feedback message in a modal
+        window.addEventListener('DOMContentLoaded', () => {
+            const feedbackMessage = "${feedbackMessage}";
+            if (feedbackMessage) {
+                const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+                feedbackModal.show();
+            }
+        });
+        function redirectToSignup() {
+            window.location.href = 'registration.jsp';
+        }
+    </script>
 </body>
 
 </html>

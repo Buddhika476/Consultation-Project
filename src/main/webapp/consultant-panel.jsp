@@ -27,15 +27,7 @@
 				        <li class="nav-item">
 				          <a class="nav-link active" href="#">Appointments</a>
 				        </li>
-				        <li class="nav-item dropdown">
-						    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">More</a>
-						    <ul class="dropdown-menu">
-						      <li><a class="dropdown-item" href="#">About Us</a></li>
-						      <li><a class="dropdown-item" href="#">FAQ</a></li>
-						      <li><hr class="dropdown-divider"></li>
-						      <li><a class="dropdown-item" href="#">Contact Us</a></li>
-						    </ul>
-						</li>
+				        
 				      </ul>
 				      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
 					    <li class="nav-item">

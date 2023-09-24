@@ -43,37 +43,37 @@ public class LoginController extends HttpServlet {
         user.setRole(request.getParameter("role"));
 
         try {
-            // Check if the provided credentials are valid
+            
             if (getUserService().loginUser(user)) {
-                // Successful login
+                
             	if (user.getRole() != null && user.getRole().equals("Seeker")) {
-                    // Role matches
+                    
                     message = "Login successful";
-                    // You can add session handling here if needed
+                    
                     request.setAttribute("feedbackMessage", message);
                     RequestDispatcher rd = request.getRequestDispatcher("user-home.jsp");
                     rd.forward(request, response);
             	}else if (user.getRole() != null && user.getRole().equals("Consultant")) {
-                    // Role matches
+                 
                     message = "Login successful";
-                    // You can add session handling here if needed
+                    
                     request.setAttribute("feedbackMessage", message);
                     RequestDispatcher rd = request.getRequestDispatcher("consultant-home.jsp");
                     rd.forward(request, response);
             	}else if (user.getRole() != null && user.getRole().equals("Admin")) {
-                    // Role matches
+                    
                     message = "Login successful";
-                    // You can add session handling here if needed
+                  
                     request.setAttribute("feedbackMessage", message);
                     RequestDispatcher rd = request.getRequestDispatcher("admin-home.jsp");
                     rd.forward(request, response);
             	}
             	else {
-                    // Role doesn't match
+                  
                     message = "Invalid Role";
                 }
             } else {
-                // Failed login
+                
                 message = "Invalid Credentials";
             }
         } catch (ClassNotFoundException | SQLException e) {

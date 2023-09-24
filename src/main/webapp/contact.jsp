@@ -16,51 +16,16 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-
-       
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-        }
-
-        
-        .mySlides {
-            display: none;
-        }
-        
-        .mySlides img {
-            width: 100%; 
-            height: 700px; 
+        .contact-us-container {
+            background-color: #fff;
+            padding: 20px;
             border-radius: 15px;
-        }
-
-        
-        .join-button {
-            position: absolute;
-            bottom: 50%; 
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-       
-        .dot {
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        
-        .active {
-            background-color: #717171;
+            margin: 20px;
         }
     </style>
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column;">
+   
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Top Jobs</a>
@@ -70,13 +35,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="top-jobs-main-page.jsp">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.jsp">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.jsp">Contact Us</a>
+                        <a class="nav-link active" href="#">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="faq.jsp">FAQ</a>
@@ -110,32 +75,20 @@
     </nav>
     <br><br>
     <div align="center">
-        <h1>One of the Best Services</h1>
-    </div>
-    <br><br>
-    <div class="slideshow-container">
-        <div class="mySlides">
-            <img src="img/slide1.jpg" alt="Slide 1" style="width:100%">
-            <div class="join-button">
-                <a href="registration.jsp">
-                    <button type="button" class="btn btn-primary btn-lg">Join Now</button>
-                </a>
-            </div>
-        </div>
-        <div class="mySlides">
-            <img src="img/slide2.jpg" alt="Slide 2" style="width:100%">
-            <div class="join-button">
-                <a href="registration.jsp">
-                    <button type="button" class="btn btn-primary btn-lg">Join Now</button>
-                </a>
-            </div>
-        </div>
-       
-        <div style="text-align:center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-           
-        </div>
+    	<div class="container contact-us-container">
+		    <h2>Contact Us</h2>
+		    <p>
+		        If you have any questions or need assistance, please feel free to contact us using the information below.
+		    </p>
+		    <p>
+		        <b>Email:</b> <a href="mailto:contact@topjobs.lk">contact@topjobs.lk</a><br>
+		        <b>Phone: +94 (76) 6720 520</b><br>
+		        <b>Address:</b> topjobs.lk piliyandala Street, Colombo , Sri Lanka
+		    </p>
+		    
+		    <!-- Google Maps Embed -->
+		    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.58638722666!2d79.7738026056682!3d6.922001982141778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo!5e0!3m2!1sen!2slk!4v1695487264718!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
     </div>
     <footer class="bg-light text-center text-lg-start mt-auto">
         <!-- Copyright -->
@@ -145,28 +98,6 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <script>
-        var slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 4000);
-        }
-    </script>
+   
 	</body>
 </html>

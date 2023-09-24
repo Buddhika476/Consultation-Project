@@ -9,6 +9,14 @@
 	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 	    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+	    <style>
+		    body {
+	            background-image: url('img/background.jpg');
+	            background-size: cover;
+	            background-repeat: no-repeat;
+	            background-attachment: fixed;
+	        }
+        </style>
 	</head>
 	<body style="min-height: 100vh; display: flex; flex-direction: column;">
 		<header>
@@ -26,15 +34,6 @@
 				        <li class="nav-item">
 				          <a class="nav-link" href="getconsult?actiontype=all">Appointments</a>
 				        </li>
-				        <li class="nav-item dropdown">
-						    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">More</a>
-						    <ul class="dropdown-menu">
-						      <li><a class="dropdown-item" href="#">About Us</a></li>
-						      <li><a class="dropdown-item" href="#">FAQ</a></li>
-						      <li><hr class="dropdown-divider"></li>
-						      <li><a class="dropdown-item" href="#">Contact Us</a></li>
-						    </ul>
-						</li>
 				      </ul>
 				      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
 					    <li class="nav-item">
